@@ -4,6 +4,6 @@
   "private": true,
   "main": "src/controller.js",
   "dependencies": {
-    "corespring-legacy-multiple-choice": "PieLabs/corespring-legacy-multiple-choice"
+    "corespring-legacy-multiple-choice": "corespring/corespring-legacy-multiple-choice"
   }
 }
