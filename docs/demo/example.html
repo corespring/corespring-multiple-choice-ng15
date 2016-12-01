@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="pie.js" type="text/javascript"></script>
+    <script src="controllers.js" type="text/javascript"></script>
+    <script src="//cdn.mathjax.org/mathjax/2.7-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/javascript">
+      window.pie = window.pie || {};
+      window.pie.env = {mode: 'gather'};
+      window.pie.model = {'pies':[{'id':'1','pie':{'name':'corespring-multiple-choice-ng15','version':'1.0.0'},'title':'Get a Job','weight':4,'correctResponse':{'value':['mc_2']},'scoreMapping':{'1':0.5,'2':1,'3':-1,'4':-1},'feedback':[{'value':'mc_1','feedback':'Incorrect'},{'value':'mc_2','feedback':'Correct','notChosenFeedback':'This would have been the correct one.'},{'value':'mc_3','feedback':'Incorrect'},{'value':'mc_4','feedback':'Incorrect'}],'model':{'config':{'orientation':'vertical','shuffle':true,'singleChoice':true,'choiceLabels':'letters','choiceType':'radio'},'choices':[{'label':'1','value':'mc_1'},{'label':'2','value':'mc_2'},{'label':'3','value':'mc_3'},{'label':'4','value':'mc_4'}]}}]};
+      window.pie.session = [];
+      
+      document.addEventListener('pie.player-ready', function(event){
+        var player = event.target;
+        var pieController = new pie.Controller(window.pie.model, window['5bc69b4ba52f5e75a7235320efad8f67']);
+        
+        player.controller = pieController;
+        player.env = window.pie.env;
+        player.session = window.pie.session;
+        
+        var panel = document.querySelector('pie-control-panel');
+        panel.env = window.pie.env;
+        
+        pieController.getLanguages().then(function(l) {
+          panel.languages = l;
+        });
+      
+        panel.addEventListener('envChanged', function(event){
+          
+          player.env = event.target.env;
+          
+          if (event.target.env.mode === 'evaluate') {
+            player.getOutcome().then(function(outcome) {
+              panel.score = ' Score: ' + outcome.summary.percentage + '% Points: ' + outcome.summary.points + '/' + outcome.summary.maxPoints;
+            });
+          } else {
+            panel.score = '';
+          }
+      
+        });
+      });
+      
+    </script>
+  </head>
+  <body>
+    <pie-control-panel></pie-control-panel>
+    <pie-player><corespring-multiple-choice-ng15 pie-id="1"></corespring-multiple-choice-ng15></pie-player>
+  </body>
+</html>

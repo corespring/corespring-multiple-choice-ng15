@@ -1,0 +1,11 @@
+{
+  "name": "corespring-multiple-choice-ng15",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/index.js",
+  "dependencies": {
+    "corespring-legacy-multiple-choice": "corespring/corespring-legacy-multiple-choice",
+    "less": "^2.7.1",
+    "lodash": "^4.15.0"
+  }
+}
