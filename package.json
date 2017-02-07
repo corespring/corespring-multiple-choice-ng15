@@ -5,8 +5,6 @@
   "main": "src/index.js",
   "dependencies": {
     "corespring-legacy-multiple-choice": "corespring/corespring-legacy-multiple-choice",
-    "less": "^2.7.1",
-    "lodash.debounce": "^4.0.8"
   },
   "devDependencies": {}
 }
