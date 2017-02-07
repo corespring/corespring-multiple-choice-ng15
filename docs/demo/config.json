@@ -1,11 +1,11 @@
 {
-  "pies": [
+  "elements": {
+    "corespring-multiple-choice-ng15": "../.."
+  },
+  "models": [
     {
       "id": "1",
-      "pie": {
-        "name": "corespring-multiple-choice-ng15",
-        "version": "1.0.0"
-      },
+      "element": "corespring-multiple-choice-ng15",
       "title": "Get a Job",
       "weight": 4,
       "correctResponse": {
