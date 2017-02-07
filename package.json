@@ -4,7 +4,7 @@
   "private": true,
   "main": "src/index.js",
   "dependencies": {
-    "corespring-legacy-multiple-choice": "corespring/corespring-legacy-multiple-choice",
+    "corespring-legacy-multiple-choice": "corespring/corespring-legacy-multiple-choice"
   },
   "devDependencies": {}
 }
